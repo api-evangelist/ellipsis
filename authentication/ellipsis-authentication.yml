@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/docs/reference/api
+docs: https://www.ellipsis.dev/docs/reference/api
+summary:
+  types: [http, oauth2]
+  api_key_in: [header]
+  oauth2_flows: [deviceCode]
+schemes:
+- name: bearerToken
+  type: http
+  scheme: bearer
+  description: >-
+    REST API requests authenticate with a bearer token created in the dashboard
+    under Platform -> API keys (token format `ellipsis_key_...`), passed as
+    `Authorization: Bearer <token>`. Requests without valid authorization return
+    HTTP 401. In scripts/CI the token is supplied via the `ELLIPSIS_API_TOKEN`
+    environment variable.
+  location: header
+  header: Authorization
+  format: Bearer
+  env: ELLIPSIS_API_TOKEN
+- name: deviceCodeLogin
+  type: oauth2
+  flow: deviceCode
+  description: >-
+    The `agent` CLI authenticates interactively via a device-code flow
+    (`agent login`): it opens a verification URL in the browser and stores a
+    user token at ~/.config/ellipsis/config.json.
+  used_by: cli
+session_credentials:
+  note: >-
+    Each agent session additionally receives its own short-lived credentials —
+    a GitHub token scoped to the permissions/repos granted at install, a
+    synthetic API key, and a session-scoped token — all revoked at teardown
+    (least privilege). Sandbox tokens are denied privileged operations (HTTP 403).
+scopes: none-documented
