@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/docs/reference/api
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: https://www.ellipsis.dev/docs/reference/api
+status_page: https://status.ellipsis.dev
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+  note: >-
+    Security page states SOC 2 coverage includes Availability; no numeric uptime
+    SLA is published. Usage-based pricing with per-organization budget caps.
+deprecated_operations: []

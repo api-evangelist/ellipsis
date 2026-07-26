@@ -1,0 +1,73 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/docs/reference/cli
+binary: agent
+license: MIT
+repo: https://github.com/ellipsis-dev/cli
+install:
+- method: homebrew
+  command: brew install ellipsis-dev/cli/agent
+verify: agent ping
+authentication:
+  interactive:
+    login: agent login          # device-code flow, opens verification URL
+    whoami: agent me
+    logout: agent logout
+  scripting:
+    env: ELLIPSIS_API_TOKEN
+    resolution_order:
+    - explicit argument
+    - environment variable (ELLIPSIS_API_TOKEN)
+    - config file (~/.config/ellipsis/config.json)
+global_flags:
+- flag: --json
+  description: Emit structured JSON output (supported on all commands).
+commands:
+- group: auth
+  commands:
+  - {name: login, purpose: Authenticate via device-code flow}
+  - {name: logout, purpose: Remove stored token}
+  - {name: me, purpose: Show current identity}
+  - {name: ping, purpose: Connectivity check}
+- group: session
+  commands:
+  - {name: session start, purpose: Launch an agent session, flags: '--config, --prompt, --watch, --budget, --model'}
+  - {name: session list, purpose: List sessions, flags: '--limit, --config, --author, --days'}
+  - {name: session get, purpose: Inspect one session, flags: '--watch, --quiet'}
+  - {name: session search, purpose: Query session history, flags: '--author, --since, --scope'}
+  - {name: session connect, purpose: Join a running session, flags: '--no-input'}
+  - {name: session stop, purpose: Halt an in-flight session}
+- group: config
+  commands:
+  - {name: config create, purpose: Add a new agent config (opens PR), flags: '--repo, --file, --template'}
+  - {name: config list, purpose: List saved configs}
+  - {name: config default, purpose: Manage default agents, flags: '--repo'}
+- group: integrations
+  commands:
+  - {name: integrations, purpose: View connected services}
+  - {name: github, purpose: GitHub-specific commands}
+  - {name: slack, purpose: Slack-specific commands}
+  - {name: linear, purpose: Linear-specific commands}
+  - {name: sentry, purpose: Sentry-specific commands}
+- group: sandbox
+  commands:
+  - {name: sandbox variable set, purpose: Store an environment variable}
+  - {name: sandbox variable list, purpose: List environment variables}
+  - {name: sandbox variable rm, purpose: Delete an environment variable}
+- group: assets
+  commands:
+  - {name: asset upload, purpose: Store a PNG image}
+- group: billing
+  commands:
+  - {name: budget, purpose: Show spend vs configured limits}
+  - {name: usage, purpose: Show token/cost usage}
+  - {name: analytics, purpose: PR and review metrics, flags: '--days, --repo'}
+- group: host
+  commands:
+  - {name: host, purpose: Manage Ellipsis instances / BYOK hosts}
+key_flows:
+- name: Run first agent
+  steps:
+  - brew install ellipsis-dev/cli/agent
+  - agent login
+  - agent session start --template welcome-to-ellipsis --watch

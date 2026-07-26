@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/docs/reference/api
+format: json
+envelope:
+  description: >-
+    All endpoints return JSON. Errors are returned as JSON bodies with a
+    `detail` message (observed on the live API, e.g. {"detail":"Not Found"}),
+    not RFC 9457 application/problem+json.
+  media_type: application/json
+problems:
+- status: 400
+  title: Invalid input
+  meaning: Validation failure or a limit was exceeded.
+- status: 401
+  title: Unauthorized
+  meaning: Invalid or missing authorization (bearer token absent or invalid).
+- status: 403
+  title: Permission denied
+  meaning: >-
+    Permission denied — e.g. a sandbox-scoped token attempting a privileged
+    operation.
+- status: 404
+  title: Not found
+  meaning: Resource not found (config deleted, repo inaccessible).
+- status: 409
+  title: Conflict / default broken
+  meaning: >-
+    Default agent is broken — its config was deleted, disabled, or the PR that
+    creates it was never merged.

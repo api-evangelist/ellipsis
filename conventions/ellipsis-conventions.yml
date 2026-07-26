@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/docs/reference/api
+base_url: https://api.ellipsis.dev
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer <ellipsis_key_...>'
+  ref: authentication/ellipsis-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  example: https://api.ellipsis.dev/v1/sessions
+structured_output:
+  cli_flag: --json
+  api: >-
+    Agents declare JSON Schemas in their YAML config (`structured_output`), so
+    downstream automation receives typed results rather than free-form prose.
+  ref: https://www.ellipsis.dev/docs/reference/agent-config
+streaming:
+  websocket: /v1/sessions/{session_id}/stream
+  description: WebSocket endpoint for live session output.
+error_handling:
+  envelope: json
+  detail_field: detail
+  ref: errors/ellipsis-problem-types.yml
+  status_codes: [400, 401, 403, 404, 409]
+idempotency:
+  documented: false
+  note: No idempotency-key contract is documented for the Ellipsis API.
+pagination:
+  documented: false
+  note: >-
+    List endpoints (e.g. /v1/sessions) accept filters such as limit/config/
+    author/days via the CLI; a formal cursor/offset pagination contract is not
+    published in the API reference.
+lifecycle_ref: lifecycle/ellipsis-lifecycle.yml

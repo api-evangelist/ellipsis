@@ -1,22 +1,125 @@
 aid: ellipsis
 name: Ellipsis
-description: Ellipsis is a company surfaced as a portfolio company of bloomberg-beta and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Ellipsis is a managed cloud platform for running autonomous coding agents at
+  scale. Engineering teams define agents as YAML config files that live in their
+  repositories, and Ellipsis runs them in isolated, ephemeral sandboxes to review
+  pull requests, fix bugs, build features, and investigate production issues.
+  Agents trigger automatically on cron schedules, GitHub pull-request lifecycle
+  events, or @ellipsis-dev mentions, and can also be launched on demand from the
+  dashboard, the REST API, or the `agent` CLI. The platform runs Claude, Codex,
+  and Gemini models, enforces hard budget caps and scoped per-session credentials,
+  retains zero source code, and provides full observability with audit trails and
+  replayable execution. Ellipsis (YC W24) serves 400+ engineering teams across
+  67,000+ connected repositories.
 url: https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.ellipsis.dev/brand/lockup-dark-transparent.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - bloomberg-beta
-x-tier: stub
+x-tier: profiled
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Code Review
+- AI Agents
+- Coding Agents
+- Developer Tools
+- Software Development
+- Automation
+- DevOps
+- Pull Requests
+apis:
+- name: Ellipsis API
+  description: >-
+    REST API for the Ellipsis coding-agent platform. Start and manage agent
+    sessions, read back typed results and transcripts, manage agent configs,
+    defaults and templates, set sandbox variables, list integrations
+    (GitHub/Slack/Linear/Sentry), pull analytics, and manage assets, budget,
+    and usage. Bearer-token authenticated at https://api.ellipsis.dev.
+  humanURL: https://www.ellipsis.dev/docs/reference/api
+  baseURL: https://api.ellipsis.dev
+  tags:
+  - Coding Agents
+  - Code Review
+  - Automation
+  properties:
+  - type: Authentication
+    url: authentication/ellipsis-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ellipsis-problem-types.yml
+  - type: Conventions
+    url: conventions/ellipsis-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/ellipsis-lifecycle.yml
+  - type: MCPServer
+    url: mcp/ellipsis-mcp.yml
+common:
+- type: DomainSecurity
+  url: security/ellipsis-domain-security.yml
+- type: Portal
+  url: https://app.ellipsis.dev
+- type: Documentation
+  url: https://www.ellipsis.dev/docs
+- type: APIReference
+  url: https://www.ellipsis.dev/docs/reference/api
+- type: GettingStarted
+  url: https://www.ellipsis.dev/docs/get-started/quickstart
+- type: Support
+  url: https://www.ellipsis.dev/support
+- type: Blog
+  url: https://www.ellipsis.dev/blog
+- type: GitHubOrganization
+  url: https://github.com/ellipsis-dev
+- type: Pricing
+  url: https://www.ellipsis.dev/pricing
+- type: SignUp
+  url: https://app.ellipsis.dev/install
+- type: TermsOfService
+  url: https://www.ellipsis.dev/terms
+- type: PrivacyPolicy
+  url: https://www.ellipsis.dev/privacy
+- type: StatusPage
+  url: https://status.ellipsis.dev
+- type: Compliance
+  url: https://www.ellipsis.dev/platform/security
+- type: CLI
+  url: cli/ellipsis-cli.yml
+- type: Packages
+  url: packages/ellipsis-packages.yml
+- type: Authentication
+  url: authentication/ellipsis-authentication.yml
+- type: Conventions
+  url: conventions/ellipsis-conventions.yml
+- type: Lifecycle
+  url: lifecycle/ellipsis-lifecycle.yml
+- type: Conformance
+  url: conformance/ellipsis-conformance.yml
+- type: LLMsTxt
+  url: llms/ellipsis-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/ellipsis-dev/cli
+packages:
+- language: cli
+  registry: homebrew
+  name: ellipsis-dev/cli/agent
+  url: https://github.com/ellipsis-dev/homebrew-cli
+  install: brew install ellipsis-dev/cli/agent
+  official: true
+  description: >-
+    The `agent` command-line interface — drives the Ellipsis cloud from your
+    terminal (login, sessions, configs, integrations, analytics). Distributed
+    via the ellipsis-dev Homebrew tap.
+- language: typescript
+  registry: github
+  name: ellipsis-dev/cli
+  url: https://github.com/ellipsis-dev/cli
+  install: brew install ellipsis-dev/cli/agent
+  official: true
+  license: MIT
+  description: >-
+    Open-source (MIT) TypeScript source for the `agent` CLI. No published npm
+    package was found; Homebrew is the documented install path.
+notes: >-
+  Ellipsis publishes a first-party CLI (`agent`) but no standalone client SDK
+  library (Python/JavaScript/etc.); scripting is done via the CLI or the REST
+  API directly, so no `SDKs` pointer is emitted.

@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.ellipsis.dev/platform/security
+compliance:
+  program_url: https://www.ellipsis.dev/platform/security
+  certifications:
+  - name: SOC 2 Type 1
+    status: certified
+    scope: [Security, Availability, Confidentiality]
+  - name: SOC 2 Type 2
+    status: in-progress
+  data_retention:
+    source_code: not-retained
+    note: >-
+      Zero source-code retention — repos are cloned into an ephemeral sandbox
+      and deleted at teardown. Session logs/transcripts retained per
+      customer-set retention; config snapshots and cost/token counts stored per
+      session.
+  report_request_contact: team@ellipsis.dev
+standards:
+- id: oauth2-device-code
+  conforms: true
+  evidence: CLI `agent login` uses an OAuth 2.0 device-code flow.
+- id: bearer-token-auth
+  conforms: true
+  evidence: REST API uses Authorization Bearer tokens (RFC 6750 style).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors returned as plain JSON {"detail":...}, not application/problem+json.
+- id: soc2-type-1
+  conforms: true
+  evidence: SOC 2 Type 1 certified (Security, Availability, Confidentiality).

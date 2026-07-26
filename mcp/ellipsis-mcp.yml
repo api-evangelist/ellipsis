@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://www.ellipsis.dev/docs/reference/api
+note: >-
+  No official hosted/remote Ellipsis MCP server was found (no @ellipsis-dev MCP
+  package, no entry in public MCP registries as of 2026-07-19). This is a
+  CANDIDATE tool list derived from the documented REST API operations, one tool
+  per endpoint, to seed a future MCP server. Not a provider claim.
+server:
+  name: ellipsis
+  transport: http
+  base_url: https://api.ellipsis.dev
+  auth: bearer-token (ELLIPSIS_API_TOKEN)
+tools:
+- {name: start_session, description: Start an agent session, source_operation: 'POST /v1/sessions'}
+- {name: list_sessions, description: List recent sessions, source_operation: 'GET /v1/sessions'}
+- {name: search_sessions, description: Search sessions by text/recap/PR/similarity, source_operation: 'GET /v1/sessions/search'}
+- {name: get_session, description: Fetch a single session, source_operation: 'GET /v1/sessions/{session_id}'}
+- {name: get_session_steps, description: Retrieve rendered steps, source_operation: 'GET /v1/sessions/{session_id}/steps'}
+- {name: get_session_turns, description: Read conversation turns and messages, source_operation: 'GET /v1/sessions/{session_id}/turns'}
+- {name: get_session_transcripts, description: Download raw transcript files, source_operation: 'GET /v1/sessions/{session_id}/transcripts'}
+- {name: replay_session, description: Re-run a finished session, source_operation: 'POST /v1/sessions/{session_id}/replay'}
+- {name: stop_session, description: Stop an in-flight session, source_operation: 'POST /v1/sessions/{session_id}/stop'}
+- {name: list_configs, description: List saved agent configs, source_operation: 'GET /v1/configs'}
+- {name: create_config, description: Create an agent config via pull request, source_operation: 'POST /v1/configs'}
+- {name: get_config, description: Fetch a single config, source_operation: 'GET /v1/configs/{config_id}'}
+- {name: get_defaults, description: List default agent settings, source_operation: 'GET /v1/defaults'}
+- {name: set_default, description: Set account/repo default agent, source_operation: 'PUT /v1/defaults'}
+- {name: list_templates, description: List starter templates, source_operation: 'GET /v1/templates'}
+- {name: list_sandbox_variables, description: List sandbox environment variables, source_operation: 'GET /v1/sandboxes/variables'}
+- {name: set_sandbox_variables, description: Create/update sandbox variables, source_operation: 'PUT /v1/sandboxes/variables'}
+- {name: list_integrations, description: List connected integrations, source_operation: 'GET /v1/integrations'}
+- {name: list_github_repos, description: List connected repositories, source_operation: 'GET /v1/github/repos'}
+- {name: get_analytics_metrics, description: PR and review aggregates, source_operation: 'GET /v1/analytics/metrics'}
+- {name: get_me, description: Current user/key details, source_operation: 'GET /v1/me'}
+- {name: get_budget, description: Spend vs configured limits, source_operation: 'GET /v1/budget'}
+- {name: get_usage, description: Token/cost usage data, source_operation: 'GET /v1/usage'}

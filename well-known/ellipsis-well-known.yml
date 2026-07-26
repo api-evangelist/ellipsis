@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of api.ellipsis.dev and www.ellipsis.dev
+hosts:
+- host: https://api.ellipsis.dev
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://www.ellipsis.dev
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+result: none-found
+note: >-
+  No /.well-known discovery documents are published. www.ellipsis.dev returns a
+  200 SPA shell for arbitrary paths, so only api.ellipsis.dev 404s are
+  authoritative; both hosts serve no well-known catalog.

@@ -1,0 +1,39 @@
+# Ellipsis
+
+> Ellipsis is a managed cloud platform for running autonomous coding agents at scale. Engineering teams define agents as YAML config files that live in their repositories, and Ellipsis runs them in isolated, ephemeral sandboxes to review pull requests, fix bugs, build features, and investigate production issues. Agents trigger on cron schedules, GitHub pull-request lifecycle events, or @ellipsis-dev mentions, and can be launched on demand from the dashboard, the REST API, or the `agent` CLI. Runs Claude, Codex, and Gemini models; enforces hard budget caps and scoped per-session credentials; retains zero source code. Ellipsis (YC W24) serves 400+ engineering teams across 67,000+ repositories.
+
+## APIs
+
+- [Ellipsis API](https://www.ellipsis.dev/docs/reference/api): REST API (base https://api.ellipsis.dev) — start/manage agent sessions, read typed results and transcripts, manage configs/defaults/templates, sandbox variables, integrations, analytics, assets, budget, and usage. Bearer-token authenticated.
+
+## Docs
+
+- [Documentation](https://www.ellipsis.dev/docs): Product documentation home.
+- [Quickstart](https://www.ellipsis.dev/docs/get-started/quickstart): Install the CLI and run your first agent in three commands.
+- [Your first agent](https://www.ellipsis.dev/docs/get-started/your-first-agent): Write and deploy an agent config from your repo.
+- [API reference](https://www.ellipsis.dev/docs/reference/api): Full REST endpoint reference.
+- [CLI reference](https://www.ellipsis.dev/docs/reference/cli): The `agent` command surface.
+- [Agent config](https://www.ellipsis.dev/docs/reference/agent-config): YAML configuration schema.
+- [Concepts: sessions](https://www.ellipsis.dev/docs/concepts/sessions)
+- [Concepts: sandbox](https://www.ellipsis.dev/docs/concepts/sandbox)
+- [Concepts: budgets](https://www.ellipsis.dev/docs/concepts/budgets)
+- [Concepts: agents as code](https://www.ellipsis.dev/docs/concepts/agents-as-code)
+- [Security & compliance](https://www.ellipsis.dev/platform/security): SOC 2 Type 1, zero source-code retention.
+
+## Artifacts (API Evangelist)
+
+- [Authentication](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/authentication/ellipsis-authentication.yml)
+- [Error catalog](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/errors/ellipsis-problem-types.yml)
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/conventions/ellipsis-conventions.yml)
+- [Lifecycle](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/lifecycle/ellipsis-lifecycle.yml)
+- [CLI](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/cli/ellipsis-cli.yml)
+- [Packages](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/packages/ellipsis-packages.yml)
+- [MCP (candidate)](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/mcp/ellipsis-mcp.yml)
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/ellipsis/refs/heads/main/conformance/ellipsis-conformance.yml)
+
+## Optional
+
+- [Pricing](https://www.ellipsis.dev/pricing): Usage-based; $100 org onboarding credit.
+- [Status](https://status.ellipsis.dev): Platform status page.
+- [Blog](https://www.ellipsis.dev/blog)
+- [GitHub](https://github.com/ellipsis-dev)
